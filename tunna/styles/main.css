@@ -1,0 +1,137 @@
+:root {
+    /* Color Pallete - Light Mode*/
+    --primary-color: #F5F6F4; /* White Smoke */
+    --secondary-color: #ededed; /* Soft Silver */
+    --border-color: #B3B3B3; /* Silver*/
+    --extra-color: #3943B7; /* Ocean Twilight */
+    --text-color: #242325; /* Shadow Grey*/
+    /* Typography */
+    --font-title: "Montserrat", sans-serif;
+    --font-p: "Oswald", sans-serif ;
+}
+
+/* Change Box Model */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* Header */
+header {
+    background-color: var(--secondary-color);
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.5fr;
+    min-height: 30px;
+    text-align: center;
+    & .title-name {
+        align-self: center;
+        font-size: 0.8rem;
+        font-family: var(--font-title);
+        color: var(--text-color);
+    }
+    & .logo {
+        & img {
+            width: 100%;
+            height: 100%;
+            /*keeps logo inside the grid column changing sizes together with the grid/screen*/
+            object-fit: contain;
+        }
+    }
+}
+
+/* Hamburger */
+.hamburger {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+
+    &::before{
+    content: "\2630";
+    }
+
+    & .show::before {
+    content: "\00D7";
+    }
+}
+
+/* Nav Menu */
+.navigation {
+    display: none;
+    &.show {
+    display: block;
+    }
+
+    & ul {
+    background-color: var(--extra-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    }
+
+    & a {
+    font-family: var(--font-title);
+    padding: 5px;
+    text-decoration: none;
+    color: var(--primary-color);
+    }
+
+    & a:hover {
+    background-color: var(--border-color);
+    border-radius: 10px;
+    }
+}
+
+/* Main */
+main {
+    & .updates {
+        padding: 10px;
+        margin: 10px;
+        border: var(--border-color) solid 1px;
+        border-radius: 15px;
+        & .card {
+            & h2 {
+                font-family: var(--font-p);
+                font-size: 1.2rem;
+            }
+            & .inner-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                & img {
+                    width: 50%;
+                    height: 50%;
+                    object-fit: contain;
+                }
+                & p {
+                    font-family: var(--font-title);
+                    font-size: small;
+                }
+            }
+        }
+    }
+}
+
+/*- Footer -*/
+footer {
+    background-color: var(--text-color);
+    text-align: center;
+    padding: 10px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-top: var(--border-color) solid 1px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    & p {
+        color: var(--primary-color);
+        padding: 10px;
+        font-family: var(--font-p);
+    }
+}
