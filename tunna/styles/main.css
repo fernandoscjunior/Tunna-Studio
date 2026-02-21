@@ -51,11 +51,11 @@ header {
     font-size: 1.5rem;
 
     &::before{
-    content: "\2630";
+        content: "\2630";
     }
 
     & .show::before {
-    content: "\00D7";
+        content: "\00D7";
     }
 }
 
@@ -67,24 +67,23 @@ header {
     }
 
     & ul {
-    background-color: var(--extra-color);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    list-style: none;
-    justify-content: space-evenly;
+        background-color: var(--extra-color);
+        margin: 0;
+        padding: 0;
+        display: flex;
+        list-style: none;
+        justify-content: space-evenly;
     }
 
     & a {
-    font-family: var(--font-title);
-    padding: 5px;
-    text-decoration: none;
-    color: var(--primary-color);
+        font-family: var(--font-title);
+        padding: 5px;
+        text-decoration: none;
+        color: var(--primary-color);
     }
 
     & a:hover {
-    background-color: var(--border-color);
-    border-radius: 10px;
+        text-decoration: underline;
     }
 }
 
@@ -133,5 +132,93 @@ footer {
         color: var(--primary-color);
         padding: 10px;
         font-family: var(--font-p);
+    }
+}
+
+/*- Tablet -*/
+@media only screen and (min-width: 37.5em) {
+    /*- Main -*/
+    main {
+        & .updates { 
+            margin: 50px;
+        }
+        & .card {
+            text-align: center;
+            & h2 {
+                font-size: 1.2rem;
+            }
+            & .inner-card {
+                & p {
+                    font-family: var(--font-title);
+                    font-size: larger;
+                }
+            }
+        }
+    }
+
+    /*- Navigation -*/
+    .navigation {
+        display: none;
+        &.show {
+            display: block;
+        }
+        & a {
+            font-size: larger;
+            padding: 25px;
+        }
+    }
+}
+
+/*- Desktop -*/
+@media only screen and (min-width: 51rem) {
+    /* Header */
+    header {
+        & .title-name {
+            font-size: 1.3rem;
+        }
+        & .logo {
+            & img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    /*- Main -*/
+    main {
+        & .updates { 
+            margin-left: 150px;
+            margin-right: 150px;
+        }
+        & .card {
+            text-align: center;
+            & h2 {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    /* Hamburger */
+    .hamburger {
+        display: none;
+    }
+
+    /* Nav Menu */
+    .navigation {
+        display: block;
+        & a {
+            padding: 25px;
+            font-size: larger;
+        }
+    }
+
+    /*- Footer -*/
+    footer {
+        padding: 10px;
+        position: sticky;
+        & p {
+            padding: 10px;
+            font-size: x-large;
+        }
     }
 }
