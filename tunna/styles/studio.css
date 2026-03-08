@@ -1,0 +1,60 @@
+:root {
+    /* Color Pallete - Light Mode*/
+    --primary-color: #F5F6F4; /* White Smoke */
+    --secondary-color: #ededed; /* Soft Silver */
+    --border-color: #B3B3B3; /* Silver*/
+    --extra-color: #3943B7; /* Ocean Twilight */
+    --text-color: #242325; /* Shadow Grey*/
+    /* Typography */
+    --font-title: "Montserrat", sans-serif;
+    --font-p: "Oswald", sans-serif ;
+}
+
+/* Change Box Model */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+}
+
+/* Navbar */
+header {
+    display: grid;
+    grid-template-columns: 2fr 0.5fr 1fr 0.75fr;
+    background-color: var(--extra-color);
+    & .studio-nav-bar {
+        display: flex;
+        align-items: center;
+        & img {
+            border-radius: 100%;
+            margin: 5px;
+            opacity: 90%;
+        }
+        & ul {
+            display: flex;
+            list-style: none;
+            & li {
+                text-decoration: none;
+                padding: 5px;
+                padding-left: 10px;
+                color: var(--primary-color);
+                font-family: var(--font-p);
+                font-size: medium;
+            }
+        }
+    }
+    & .save-btn, .player, .exit-btn {
+        align-self: center;
+        padding: 5px;
+        & button {
+            background-color: var(--primary-color);
+            border-radius: 5px;
+            border: thin;
+            font-family: var(--font-p);
+            padding: 5px;
+            color: var(--text-color);
+        }
+    }
+}
